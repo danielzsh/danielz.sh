@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Inter Black';
+    src: url('./lib/fonts/Inter-Black.ttf');
+  }
+  body {
+    @apply bg-black;
+  }
+}
