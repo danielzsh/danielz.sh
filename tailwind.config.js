@@ -7,7 +7,7 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-				interblack: ['Inter Black']
+				interblack: ['Inter Black', ...defaultTheme.fontFamily.sans]
 			}
 		}
 	},

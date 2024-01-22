@@ -8,6 +8,9 @@
     src: url('./lib/fonts/Inter-Black.ttf');
   }
   body {
-    @apply bg-black;
+    @apply bg-black text-white;
+  }
+  p {
+    @apply font-light
   }
 }
