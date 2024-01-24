@@ -12,5 +12,8 @@
 			class="max-h-80 self-center group-hover:scale-105 transition-transform"
 		/>
 	</div>
-	<a href={url} class="text-5xl font-bold mt-2 ml-4 relative z-10">{title}</a>
+	<div class="ml-4 mt-2">
+		<p class="text-gray-400">~/blog/latest:</p>
+		<a href={url} class="text-5xl text-neutral-300 font-bold mt-5 relative z-10">{title}</a>
+	</div>
 </div>

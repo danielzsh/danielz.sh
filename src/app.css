@@ -20,15 +20,15 @@
       content: '';
       position: absolute;
       z-index: -1;
-      top: 80%;
-      left: -0.1em;
-      right: -0.1em;
+      top: 0;
+      left: 0;
+      right: 100%;
       bottom: 0;
-      transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
-      @apply bg-blue-500;
+      transition: right 200ms ease-in-out;
+      @apply bg-blue-900;
     }
     &:hover::after {
-      top: 0;
+      right: 0;
     }
   }
   /* a::after {
