@@ -20,15 +20,31 @@
       content: '';
       position: absolute;
       z-index: -1;
-      top: 0;
-      left: 0;
-      right: 100%;
+      top: 70%;
+      left: -1px;
+      right: -1px;
       bottom: 0;
-      transition: right 200ms ease-in-out;
-      @apply bg-blue-900;
+      transition: top 200ms ease-in-out;
+      @apply bg-blue-700;
     }
     &:hover::after {
-      right: 0;
+      top: 0;
+    }
+    &.heading {
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 100%;
+        bottom: 0;
+        transition: right 200ms ease-in-out;
+        @apply bg-blue-900;
+      }
+      &:hover::after {
+        right: 0;
+      }
     }
   }
   /* a::after {
