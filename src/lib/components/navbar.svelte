@@ -8,7 +8,6 @@
 			res.push(res.length ? [link, res.at(-1)[0] + '/' + link] : [link || '~', `/${link}`])
 			return res
 		}, [])
-	console.log(links)
 </script>
 
 <div class="w-full h-auto text-7xl flex align-middle">
