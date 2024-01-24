@@ -1,7 +1,7 @@
 <script>
 	import logo from '$lib/images/pfp.png'
 	import { page } from '$app/stores'
-	const links = $page.url.pathname
+	$: links = $page.url.pathname
 		.split('/')
 		.slice(1)
 		.reduce((res, link) => {
@@ -15,10 +15,10 @@
 	<a href="/">
 		<img src={logo} alt="logo" class="rounded-full h-[4.5rem] w-auto" />
 	</a>
-	<p class="text-gray-600 font-medium">/</p>
-	<div class="font-extralight text-white">
+	<div class="flex">
 		{#each links as [link, href]}
-			<a {href} class="heading">{link}</a>
+			<p class="text-gray-600 font-light">/</p>
+			<a {href} class="font-extralight flex heading">{link}</a>
 		{/each}
 	</div>
 </div>
