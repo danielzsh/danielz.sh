@@ -11,8 +11,7 @@
   text-gray-400 text-4xl font-black
     flex justify-center items-center
     border border-[#434d90] transition-colors
-  hover:border-gray-300
-  hover:dark:border-neutral-700
+  hover:border-neutral-700
     relative bg-cover
   "
 	style="background-image: url({cardbg});"
