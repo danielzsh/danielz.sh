@@ -8,7 +8,7 @@ export async function load() {
 			res.push(
 				import(`../../../blog/${path.split('/')[2]}/thumbnail.svg`).then((thumbnail) =>
 					posts[path]().then((module) => ({
-						url: path,
+						url: path.slice(0, -8),
 						content: module.default,
 						thumbnail: thumbnail.default,
 						...module.metadata

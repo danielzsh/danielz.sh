@@ -7,7 +7,7 @@
 	<title>danielz.sh</title>
 </svelte:head>
 <h1
-	class="text-[120px] bg-clip-text text-transparent bg-contain font-black inline-block font-interblack"
+	class="text-7xl md:text-[120px] bg-clip-text text-transparent bg-contain font-black inline-block font-interblack"
 	style="background-image: url({textbg}); -webkit-text-stroke: 1px white;"
 >
 	Hi. I'm Daniel.

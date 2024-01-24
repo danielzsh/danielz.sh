@@ -13,7 +13,7 @@
   p {
     @apply font-light;
   }
-  /* applies to all a with no children */
+  /* applies to all anchor tags with no children */
   a:not(:has(*)) {
     @apply relative;
     &::after {
