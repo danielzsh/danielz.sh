@@ -11,40 +11,24 @@
     @apply bg-black text-white;
   }
   p {
-    @apply font-light;
+    @apply font-light text-xl text-gray-400;
   }
   /* applies to all anchor tags with no children */
   a:not(:has(*)) {
-    @apply relative;
+    @apply relative text-gray-300 font-normal;
     &::after {
       content: '';
       position: absolute;
       z-index: -1;
-      top: 70%;
-      left: -1px;
-      right: -1px;
+      top: 0;
+      left: 0;
+      right: 100%;
       bottom: 0;
-      transition: top 200ms ease-in-out;
-      @apply bg-blue-700;
+      transition: right 200ms ease-in-out;
+      @apply bg-blue-900;
     }
     &:hover::after {
-      top: 0;
-    }
-    &.heading {
-      &::after {
-        content: '';
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        left: 0;
-        right: 100%;
-        bottom: 0;
-        transition: right 200ms ease-in-out;
-        @apply bg-blue-900;
-      }
-      &:hover::after {
-        right: 0;
-      }
+      right: 0;
     }
   }
   /* a::after {

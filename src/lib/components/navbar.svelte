@@ -5,7 +5,7 @@
 		.split('/')
 		.slice(1)
 		.reduce((res, link) => {
-			res.push(res.length ? [link, res.at(-1)[0] + '/' + link] : [link || '~', `/${link}`])
+			res.push(res.length ? [link, res.at(-1)[1] + '/' + link] : [link || '~', `/${link}`])
 			return res
 		}, [])
 </script>
@@ -16,7 +16,7 @@
 	</a>
 	<div class="flex">
 		{#each links as [link, href]}
-			<p class="text-gray-600 font-light">/</p>
+			<span class="text-gray-600 font-light">/</span>
 			<a {href} class="font-extralight flex heading">{link}</a>
 		{/each}
 	</div>

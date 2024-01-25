@@ -14,6 +14,6 @@
 	</div>
 	<div class="ml-4 mt-2 z-10">
 		<p class="text-neutral-500 font-normal">~/blog/latest:</p>
-		<a href={url} class="text-5xl text-neutral-400 font-bold mt-5 heading">{title}</a>
+		<a href={url} class="text-5xl text-neutral-400 font-bold mt-5">{title}</a>
 	</div>
 </div>
