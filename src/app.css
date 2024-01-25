@@ -8,14 +8,17 @@
     src: url('./lib/fonts/Inter-Black.ttf');
   }
   body {
-    @apply bg-black text-white;
+    @apply bg-black font-light text-xl text-gray-400;
   }
-  p {
-    @apply font-light text-xl text-gray-400;
+  li {
+    @apply ml-2;
+  }
+  h1 {
+    @apply font-bold text-4xl text-gray-300 mt-2;
   }
   /* applies to all anchor tags with no children */
   a:not(:has(*)) {
-    @apply relative text-gray-300 font-normal;
+    @apply relative text-neutral-300 font-normal;
     &::after {
       content: '';
       position: absolute;

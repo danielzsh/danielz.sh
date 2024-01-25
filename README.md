@@ -1,3 +1,1 @@
-# Some Design Inspo
-https://evanyou.me/ (for links)
-Next.js template (for the card component)
+See `/blog/about/page.md` for more info about this site.
