@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer base {
   @font-face {
     font-family: 'Inter Black';
@@ -14,7 +13,10 @@
     @apply ml-2;
   }
   h1 {
-    @apply font-bold text-4xl text-gray-300 mt-2;
+    @apply font-bold text-5xl text-gray-200 mb-5;
+  }
+  h2 {
+    @apply font-bold text-3xl text-gray-300 mt-5 mb-2;
   }
   /* applies to all anchor tags with no children */
   a:not(:has(*)) {
@@ -34,18 +36,4 @@
       right: 0;
     }
   }
-  /* a::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: 66%;
-    left: -0.1em;
-    right: -0.1em;
-    bottom: 0;
-    transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
-    @apply bg-blue-500;
-  }
-  a:hover::after {
-    top: 0;
-  } */
 }

@@ -1,0 +1,16 @@
+---
+import Layout from '@layouts/BaseLayout.astro'
+import Post from '@components/Post.astro'
+import { getCollection } from 'astro:content'
+
+const posts = await getCollection('blog')
+---
+
+<Layout title="~/blog">
+	<div class="grid grid-cols-2 gap-10">
+		<div class="col-span-1">
+			<Post slug={posts[0].slug} {...posts[0].data} />
+		</div>
+		<div class="col-span-1"><p>No older posts!</p></div>
+	</div>
+</Layout>

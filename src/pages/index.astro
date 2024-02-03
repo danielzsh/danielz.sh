@@ -1,0 +1,15 @@
+---
+import Layout from '@layouts/BaseLayout.astro'
+import Card from '@components/Card.astro'
+import textbg from '@images/textbg.png'
+---
+
+<Layout title="danielz.sh">
+	<h1
+		class="text-7xl md:text-[120px] bg-clip-text text-transparent bg-contain font-static font-black inline-block"
+		style=`background-image: url(${textbg.src}); -webkit-text-stroke: 1px white;`
+	>
+		Hi. I'm Daniel.
+	</h1>
+	<Card href="/blog" title="~/blog" />
+</Layout>
