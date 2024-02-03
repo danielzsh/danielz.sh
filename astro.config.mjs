@@ -12,5 +12,7 @@ export default defineConfig({
   vite: {
     plugins: [Inspect()]
   },
-  adapter: vercel()
+  adapter: vercel({
+    imageService: true
+  })
 })
