@@ -1,6 +1,5 @@
 ---
 title: About this Site
-tags: []
 image: https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/996px-Svelte_Logo.svg.png
 ---
 

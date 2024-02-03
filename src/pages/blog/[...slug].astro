@@ -1,6 +1,6 @@
 ---
 import { getEntry } from 'astro:content'
-import Layout from '@layouts/BaseLayout.astro'
+import Layout from '@layouts/Layout.astro'
 
 const { slug } = Astro.params
 const Post = slug && (await getEntry('blog', slug))
@@ -9,9 +9,9 @@ const { Content, headings } = await Post.render()
 ---
 
 <Layout title={Post.data.title}>
-	<div class="flex flex-col items-center">
-		<div class="w-full max-w-3xl">
-			<Content />
-		</div>
-	</div>
+  <div class="flex flex-col items-center">
+    <div class="w-full max-w-3xl">
+      <Content />
+    </div>
+  </div>
 </Layout>
