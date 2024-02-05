@@ -1,5 +1,4 @@
 import cardbg from '@images/cardbg.png'
-import { SwiperSlide } from 'swiper/react'
 export default function Card({ title, href }) {
   return (
     <a
@@ -14,9 +13,9 @@ export default function Card({ title, href }) {
       "
       style={{ backgroundImage: `url(${cardbg.src})` }}
     >
-      <span class="z-10">
+      <span className="z-10">
         {`${title} `}
-        <span class="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+        <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
           -&gt;
         </span>
       </span>
