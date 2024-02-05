@@ -1,5 +1,5 @@
 import cardbg from '@images/cardbg.png'
-export default function Card({ title, href }) {
+export default function Card({ title, href, bg }) {
   return (
     <a
       href={href}
@@ -11,7 +11,7 @@ export default function Card({ title, href }) {
       hover:border-neutral-700
         relative bg-cover
       "
-      style={{ backgroundImage: `url(${cardbg.src})` }}
+      style={{ backgroundImage: `url(${bg})` }}
     >
       <span className="z-10">
         {`${title} `}

@@ -9,8 +9,11 @@
   body {
     @apply bg-black font-light text-xl text-gray-400;
   }
+  ul {
+    @apply border-l border-t border-gray-600 rounded-lg;
+  }
   li {
-    @apply ml-2;
+    @apply px-3 transition-all rounded-lg hover:bg-gray-800 -translate-x-1 hover:translate-x-0;
   }
   h1 {
     @apply font-bold text-5xl text-gray-200 mb-5;
@@ -18,9 +21,12 @@
   h2 {
     @apply font-bold text-3xl text-gray-300 mt-5 mb-2;
   }
+  h3 {
+    @apply font-bold text-2xl text-gray-400 mt-3 mb-2;
+  }
   /* applies to all anchor tags with no children */
   a:not(:has(*)) {
-    @apply relative text-neutral-300 font-normal;
+    @apply relative text-neutral-300 font-normal z-10;
     &::after {
       content: '';
       position: absolute;

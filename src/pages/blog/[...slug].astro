@@ -1,6 +1,6 @@
 ---
 import { getEntry } from 'astro:content'
-import Layout from '@layouts/Layout.astro'
+import PostLayout from '@layouts/PostLayout.astro'
 
 const { slug } = Astro.params
 const Post = slug && (await getEntry('blog', slug))
@@ -8,10 +8,6 @@ if (!Post) return Astro.redirect('/404')
 const { Content, headings } = await Post.render()
 ---
 
-<Layout title={Post.data.title}>
-  <div class="flex flex-col items-center">
-    <div class="w-full max-w-3xl">
-      <Content />
-    </div>
-  </div>
-</Layout>
+<PostLayout title={Post.data.title}>
+  <Content />
+</PostLayout>
