@@ -3,9 +3,13 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "allowJs": true,
-    "baseUrl": "./",
+    "baseUrl": "/Users/danielzhu/Documents/i/danielz.sh",
     "paths": {
-      "@*": ["src/*"]
-    }
+      "@*": [
+        "src/*"
+      ]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

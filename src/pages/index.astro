@@ -1,7 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro'
-import Card from '@components/Card.astro'
 import textbg from '@images/textbg.png'
+import Cards from '@components/Cards'
 ---
 
 <Layout title="danielz.sh">
@@ -11,5 +11,5 @@ import textbg from '@images/textbg.png'
   >
     Hi. I'm Daniel.
   </h1>
-  <Card href="/blog" title="~/blog" />
+  <Cards client:load />
 </Layout>
