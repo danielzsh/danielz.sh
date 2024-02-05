@@ -12,3 +12,4 @@ This site is built with [Astro](https://astro.build/), a beautiful framework you
 - https://evanyou.me (for links)
 - https://antfu.me (just for being a really cool website)
 - [Next.js template](https://nextjs-template.vercel.app/) (for the card component)
+- [GitHub Blog](https://github.blog) (for the blog layout)

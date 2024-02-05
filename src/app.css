@@ -6,10 +6,19 @@
     @apply bg-black font-light text-xl text-gray-400;
   }
   ul {
-    @apply border border-l-0 rounded-lg border-gray-600 mb-3;
+    @apply border-l border-t rounded-lg border-gray-600 mb-3;
+  }
+  li:first-child {
+    @apply rounded-t-lg;
+  }
+  li:last-child {
+    @apply rounded-b-lg;
   }
   li {
-    @apply px-3 border-l border-gray-400 transition-all rounded-lg rounded-br-none hover:bg-gray-800;
+    @apply px-3 transition-all rounded-br-none hover:bg-gray-800;
+  }
+  li:nth-child(even) {
+    @apply bg-gray-900 hover:bg-gray-700;
   }
   h1 {
     @apply font-bold text-5xl text-gray-200 mb-5;
