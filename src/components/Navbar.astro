@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import logo from '@images/pfp.png'
+import { Debug } from 'astro:components'
 
 const links = Astro.url.pathname
   .split('/')
@@ -8,6 +9,7 @@ const links = Astro.url.pathname
   .reduce(
     (res, link) => {
       const last = res.at(-1)
+      if (last && !link) return res
       res.push(
         last
           ? [last[1].includes('blog') ? '*' : link, `${last[1]}/${link}`]
