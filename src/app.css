@@ -5,20 +5,26 @@
   body {
     @apply bg-black font-light text-xl text-gray-400;
   }
+  strong {
+    @apply font-bold text-gray-300;
+  }
+  ol {
+    @apply list-decimal pl-5;
+  }
   ul {
     @apply border-l border-t rounded-lg border-gray-600 mb-3 mt-2;
   }
-  li:first-child {
+  ul li:first-child {
     @apply rounded-t-lg;
   }
-  li:last-child {
+  ul li:last-child {
     @apply rounded-b-lg;
   }
-  li {
+  ul li {
     @apply px-3 transition-all rounded-br-none hover:bg-gray-800;
   }
-  li:nth-child(even) {
-    @apply bg-gray-900 hover:bg-gray-800;
+  ul li:nth-child(even) {
+    @apply bg-blue-900/60 hover:bg-blue-900/90;
   }
   h1 {
     @apply font-bold text-5xl text-gray-200 mb-5;
@@ -39,14 +45,15 @@
       content: '';
       position: absolute;
       z-index: -1;
-      top: 0;
-      left: 0;
-      right: 100%;
+      top: 95%;
+      left: 50%;
+      right: 50%;
       bottom: 0;
-      transition: right 200ms ease-in-out;
-      @apply bg-blue-900;
+      transition: all 200ms ease-in-out;
+      @apply bg-white;
     }
     &:hover::after {
+      left: 0;
       right: 0;
     }
   }

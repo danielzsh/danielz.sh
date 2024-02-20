@@ -15,7 +15,7 @@ Here are some of my projects, in roughly chronological order.
 If you do any kind of programming, I'm sure you've heard of Scratch, the infamous block programming language. Take a wild guess as to what [`blocks`](https://danielzsh.github.io/blocks/#/) is (be patient; the page may take a while to load)!
 ![Alt text](@images/blocks.png)
 
-### Contributing to usaco.guide (2023-present)
+### `usaco.guide` (2023-present)
 If you haven't checked out the [usaco.guide](https://github.com/cpinitiative/usaco-guide) before, please do! Here's some of what I contributed, in no particular order:
 - GitHub integration with the usaco.guide editor [(PR here)](https://github.com/cpinitiative/usaco-guide/pull/4197)
 - [Self-updating repo](https://github.com/cpinitiative/usaco-problems) of USACO problems

@@ -8,9 +8,13 @@ export async function getStaticPaths() {
 const { slug } = Astro.params
 const Post = slug && (await getEntry('blog', slug))
 if (!Post) return Astro.redirect('/404')
+const frontmatter = Post.data
+const readTime = Post.body.split(' ').length / 200
 const { Content } = await Post.render()
 ---
 
-<PostLayout title={Post.data.title}>
+<PostLayout title={frontmatter.title}>
+  {frontmatter.date.toDateString().split(' ').slice(1).join(' ')} • {Math.ceil(readTime)} min read
+  <h1>{frontmatter.title}</h1>
   <Content />
 </PostLayout>

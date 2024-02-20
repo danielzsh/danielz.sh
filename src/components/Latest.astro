@@ -5,16 +5,13 @@ interface Props {
   image: string
 }
 
-const { slug, title, image } = Astro.props
+let { slug, title, image } = Astro.props
+if (!image.includes('.')) image = (await import(`../images/${image}.png`)).default.src
 ---
 
 <div class="flex flex-col items-start rounded-3xl overflow-hidden bg-neutral-800 pb-10">
-  <div class="w-full flex flex-col p-10 bg-neutral-700 group">
-    <img
-      src={image}
-      alt="thumbnail"
-      class="w-full max-h-80 self-center group-hover:scale-105 transition-transform"
-    />
+  <div class="w-full aspect-square max-h-80 flex flex-col items-center p-10 bg-neutral-700 group">
+    <img src={image} alt="thumbnail" class="h-full group-hover:scale-105 transition-transform" />
   </div>
   <div class="ml-4 mt-2 z-10">
     <p class="text-gray-400 font-normal">~/blog/latest:</p>
