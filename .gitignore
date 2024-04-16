@@ -3,3 +3,7 @@ dist/
 .DS_Store
 .astro
 .vercel
+
+# Manim
+src/manim/__pycache__/
+**/partial_movie_files/

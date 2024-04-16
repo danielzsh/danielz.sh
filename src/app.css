@@ -5,6 +5,9 @@
   body {
     @apply bg-black font-light text-xl text-gray-400;
   }
+  p {
+    @apply mt-3;
+  }
   strong {
     @apply font-bold text-gray-300;
   }
@@ -39,7 +42,8 @@
     @apply rounded-lg;
   }
   /* applies to all anchor tags with no children */
-  a:not(:has(*)), a > code {
+  a:not(:has(*)),
+  a > code {
     @apply relative text-neutral-300 font-normal z-10;
     &::after {
       content: '';
