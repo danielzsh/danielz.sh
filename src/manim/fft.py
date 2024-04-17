@@ -8,34 +8,47 @@ class CreateCircle(Scene):
         t = ValueTracker(0)
 
         ax1 = Axes(
-          x_range=[0, TAU],
-          y_range=[-1.5, 1.5],
-        )
-        cos = VGroup(ax1, always_redraw(
-          lambda: ax1.plot(
-            lambda x: np.cos(x),
-            x_range=[0, t.get_value()],
-            color=BLUE,
-          )
-        ))
-
-        ax2 = Axes(
           x_range=[-1.5, 1.5],
           y_range=[-1.5, 1.5],
           x_length=8,
           y_length=8,
           axis_config={"include_numbers": True},
         )
-        func = VGroup(
-          ax2,
-          always_redraw(
-            lambda: ax2.plot_parametric_curve(
-              lambda t: np.array((np.cos(t), np.sin(t))),
-              t_range = (0, t.get_value()),
-            ).set_color(RED)
+
+        ax2 = Axes(
+          x_range=[0, TAU],
+          y_range=[-1.5, 1.5],
+          y_length=8,
+        )
+
+        axes = VGroup(ax1, ax2).arrange().scale_to_fit_width(13.0)
+
+        parametric = ax1.plot_parametric_curve(
+          lambda t: np.array((np.cos(t), np.sin(t))),
+          t_range = (0, TAU + 0.1),
+        ).set_color(RED)
+
+        sin = ax2.plot(
+          np.sin,
+          color=BLUE,
+        )
+
+        line1 = always_redraw(
+          lambda: Line(
+              start=ax1.c2p(0, 0),
+              end=ax1.c2p(np.cos(t.get_value()), np.sin(t.get_value())),
+              color=YELLOW
           )
         )
 
-        group = VGroup(cos, func).arrange().scale_to_fit_width(13.0)
-        self.add(group)
-        self.play(t.animate.set_value(TAU), rate_func=linear, run_time=2)
+        line2 = always_redraw(
+          lambda: DashedLine(
+            start=ax1.c2p(np.cos(t.get_value()), np.sin(t.get_value())),
+            end=ax2.c2p(t.get_value(), np.sin(t.get_value())),
+            color=YELLOW
+          )
+        )
+
+
+        self.add(axes, sin, parametric, line1, line2)
+        self.play(t.animate.set_value(TAU), run_time=4, rate_func=linear)
