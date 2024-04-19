@@ -29,6 +29,12 @@
   ul li:nth-child(even) {
     @apply bg-blue-900/60 hover:bg-blue-900/90;
   }
+  ol {
+    @apply ml-2;
+  }
+  li::marker {
+    color: white;
+  }
   h1 {
     @apply font-bold text-5xl text-gray-200 mb-5;
   }

@@ -6,4 +6,5 @@ dist/
 
 # Manim
 src/manim/__pycache__/
+src/manim/media/
 **/partial_movie_files/
