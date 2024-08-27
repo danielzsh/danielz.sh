@@ -6,7 +6,7 @@
     @apply bg-black font-light text-xl text-gray-400;
   }
   p {
-    @apply mt-3;
+    @apply mt-0;
   }
   strong {
     @apply font-bold text-gray-300;
@@ -48,23 +48,10 @@
     @apply rounded-lg;
   }
   /* applies to all anchor tags with no children */
-  a:not(:has(*)),
-  a > code {
+  a {
     @apply relative text-neutral-300 font-normal z-10;
-    &::after {
-      content: '';
-      position: absolute;
-      z-index: -1;
-      top: 95%;
-      left: 50%;
-      right: 50%;
-      bottom: 0;
-      transition: all 200ms ease-in-out;
-      @apply bg-white;
-    }
-    &:hover::after {
-      left: 0;
-      right: 0;
-    }
+  }
+  a:not(:has(*)):hover {
+    @apply underline  
   }
 }
