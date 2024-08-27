@@ -49,7 +49,7 @@ Hmm...what kind of shape does $ce^{i\omega t}$ draw out in the complex plane? Do
 
 _Note that the rightmost function is only drawn with $t \in [0, 100]$; try increasing that right endpoint!_
 
-You may have noticed that all the circles are centered at the origin. Why is this the case? What does this imply about the "2D function" $F(t)$?
+You may have noticed that all the graph are centered at the origin. Why is this the case? What does this imply about the "2D function" $F(t)$?
 
 ## The Big Idea
 
