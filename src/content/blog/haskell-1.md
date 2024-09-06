@@ -75,7 +75,7 @@ With that said, here's what I've learned so far about Haskell and functional pro
 Obviously, FP revolves around **functions**. An important property of functions in FP is that they are _first-class citizens_. This means that functions can be passed as arguments to other functions, returned as values from other functions, and assigned to variables.
 Functions also satisfy the _referential transparency_ property, which means that a function always returns the same output for the same input.
 
-Here's a concrete example: imagine a `Counter` class in a standard OOP language with a method `increment()` that increments a counter by 1 and returns the new value. If you call `increment()` twice, the first call will return 0, while the second will return 1. However, in FP, you would define a function `increment` that takes a counter as an argument and returns a new counter with the value incremented by 1.
+Here's a concrete example: imagine a `Counter` class in a standard OOP language with a method `increment()` that increments a counter by 1 and returns the new value. If you call `increment()` twice, the first call will return 1, while the second will return 2. However, in FP, you would define a function `increment` that takes a counter as an argument and returns a new counter with the value incremented by 1. Therefore, `increment counter` will always return the same value, regardless of how many times you call it.
 
 ```haskell
 let counter = 0
@@ -106,11 +106,11 @@ let a'' = incrementLastFive a'
 
 Which is obviously less efficient, as you have to copy the array twice. (Haskell does provide ways to get around this, which may be covered in a future post.)
 
-A benefit of this immutability, however, is that all objects are **fully persistent**, meaning that all versions of an object are accessible at all times. For instance, in the C++ code above, only the final version of `a` is accessible at the end of the code. In Haskell, all versions of `a` (`a`, `a'`, `a''`) are accessible at all times. This means that implementing a data structure efficiently in FP reaps the added benefit of having a fully persistent data structure. Functional data structures are an active area of research, and many data structures have already been developed that are both efficient and fully persistent. Some classic data structures that have purely functional equivalents are stacks, sets/multisets, and priority queues (you can read more about such data structure [here](https://en.wikipedia.org/wiki/Purely_functional_data_structure)).
+A benefit of this immutability, however, is that all objects are **fully persistent**, meaning that all versions of an object are accessible at all times. For instance, in the C++ code above, only the final version of `a` is accessible at the end of the code. In Haskell, all versions of `a` (`a`, `a'`, `a''`) are accessible at all times. This means that implementing a data structure efficiently in FP reaps the added benefit of having a fully persistent data structure. Functional data structures are an active area of research, and many data structures have already been developed that are both efficient and fully persistent. Some classic data structures that have purely functional equivalents are stacks, sets/multisets, and priority queues (you can read more about such data structures [here](https://en.wikipedia.org/wiki/Purely_functional_data_structure)).
 
 ## Solving Some Problems
 
-Let's get our hands dirty by actually writing some code! I decided to turn to CSES, a collection of competitive programming problems, to practice my Haskell skills (or lack thereof).
+Let's get our hands dirty by actually writing some code! I decided to turn to [CSES](https://cses.fi/), a collection of competitive programming problems, to practice my Haskell skills (or lack thereof).
 
 ### [Weird Algorithm](https://cses.fi/problemset/task/1068)
 

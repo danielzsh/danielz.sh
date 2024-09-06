@@ -6,7 +6,7 @@
     @apply bg-black font-light text-xl text-gray-400;
   }
   p {
-    @apply mt-0 mb-1;
+    @apply mt-0 mb-3;
   }
   strong {
     @apply font-bold text-gray-300;
