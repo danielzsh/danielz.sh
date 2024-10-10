@@ -3,7 +3,7 @@
 @tailwind utilities;
 @layer base {
   body {
-    @apply bg-black font-light text-xl text-gray-400;
+    @apply bg-black font-light text-xl text-neutral-400;
   }
   p {
     @apply mt-0 mb-3;
