@@ -4,7 +4,7 @@ title: 'OI #1: Chorus'
 image: https://art.npanuhin.me/SVG/Codeforces/Codeforces.colored.svg
 ---
 
-Here's a [link to the problem](https://loj.ac/p/3972) (the page links an English PDF as well).
+Welcome to my first ever problem editorial! Here's a [link to the problem](https://loj.ac/p/3972) (the page links an English PDF as well).
 
 ## Observations
 

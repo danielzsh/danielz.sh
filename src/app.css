@@ -15,6 +15,10 @@
     @apply list-decimal pl-5;
   }
   ul {
+    list-style-type: disc;
+    @apply ml-7;
+  }
+  /* ul {
     @apply border-l border-t rounded-lg border-gray-600 mb-3 mt-2;
   }
   ul li:first-child {
@@ -28,7 +32,7 @@
   }
   ul li:nth-child(even) {
     @apply bg-blue-900/60 hover:bg-blue-900/90;
-  }
+  } */
   ol {
     @apply ml-2;
   }
@@ -47,6 +51,11 @@
   img {
     @apply rounded-lg;
   }
+  img[alt='diagram'] {
+    width: 500px;
+    height: 400px;
+    @apply mx-auto mb-5;
+  }
   /* applies to all anchor tags with no children */
   a {
     @apply relative text-neutral-300 z-10;
@@ -54,4 +63,18 @@
   a:not(:has(*)):hover {
     @apply underline;
   }
+  blockquote {
+    border-left: 5px solid #ccc;
+    margin-left: 0.5em;
+    margin-bottom: 0.5em;
+    padding: 0.5em 10px;
+    quotes: '\201C' '\201D' '\2018' '\2019';
+    /* @apply text-neutral-300; */
+  }
+  blockquote p {
+    display: inline;
+  }
+}
+.katex {
+  @apply !text-neutral-300;
 }
