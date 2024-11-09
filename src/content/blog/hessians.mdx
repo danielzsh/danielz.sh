@@ -1,7 +1,7 @@
 ---
 date: 2024-11-08
 title: 'Deep Dive: Hessians'
-image: https://art.npanuhin.me/SVG/Codeforces/Codeforces.colored.svg
+image: https://upload.wikimedia.org/wikipedia/commons/7/7e/3d-function-6.svg
 ---
 
 import video from '@images/hessian/symmetric.mp4'
@@ -22,7 +22,8 @@ $f(x, y)$, which goes something like this:
 >
 > If $D = 0$, the test is inconclusive.
 
-No proof was given, so I decided to go and try to find my own intuition.
+No proof was given, so I decided to go and try to find my own intuition,
+and ended up discovering some fascinating properties along the way.
 
 ## I. MOTIVATION
 
@@ -130,9 +131,7 @@ Those well-versed in linear algebra might already see where this is going...
 
 ## III. DEFINITE MATRICES
 
-First, skim this [Wikipedia article](https://en.wikipedia.org/wiki/Definite_matrix).
-
-This article, in all its length, somehow manages to glance over
+[This Wikipedia article](https://en.wikipedia.org/wiki/Definite_matrix), in all its length, somehow manages to glance over
 key intutions, which I hope to cover here.
 
 First, recall the Hessian must be a symmetric matrix, since $f_{xy} = f_{yx}$.
@@ -154,11 +153,11 @@ if one stretch factor is negative and the other positive, we will have a mix
 of vectors pointing in both directions&mdash;this corresponds to the saddle case.
 
 Now we see where the determinant comes in: if we think of the determinant
-of a matrix transform as the amount it scales area by, we can see
+of a matrix transform as the amount it scales area by, we can see that
 the determinant of our transform with stretch factors $a$ and $b$ should just
 be $ab$. If $a$ and $b$ are both positive or both negative, corresponding to
 the local minimum and local maximum cases, respectively, then the determinant
-will be positive. Otherwise, it must either be less than 0, which corresponds
+will be positive. Otherwise, the determinant must either be less than 0, which corresponds
 to the saddle case, or 0, in which case the test is inconclusive.
 
 ## IV. FURTHER READING
