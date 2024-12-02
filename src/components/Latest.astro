@@ -2,12 +2,11 @@
 interface Props {
   slug: string
   title: string
-  feature_image: string
+  image: string
 }
 
-let { slug, title, feature_image } = Astro.props
-if (!feature_image.includes('.'))
-  feature_image = (await import(`../images/${feature_image}.png`)).default.src
+let { slug, title, image } = Astro.props
+if (!image.includes('.')) image = (await import(`../images/${image}.png`)).default.src
 ---
 
 <div
@@ -16,7 +15,7 @@ if (!feature_image.includes('.'))
   <div
     class="w-full aspect-square max-h-72 xl:max-h-96 flex flex-col p-5 items-center bg-neutral-700 group"
   >
-    <img src={feature_image} alt="thumbnail" class="h-full" />
+    <img src={image} alt="thumbnail" class="h-full group-hover:scale-105 transition-transform" />
   </div>
   <div class="ml-4 mt-2 z-10">
     <p class="text-gray-400 font-normal mb-0 mt-1">~/blog/latest:</p>

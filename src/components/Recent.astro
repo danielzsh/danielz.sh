@@ -4,11 +4,11 @@ import type { AstroComponentFactory } from 'astro/runtime/server/index.js'
 interface Props {
   slug: string
   title: string
-  feature_image: string
-  html: string
+  image: string
+  Content: AstroComponentFactory
 }
 
-let { slug, title, feature_image: image, html } = Astro.props
+let { slug, title, image, Content } = Astro.props
 if (!image.includes('.')) image = (await import(`../images/${image}.png`)).default.src
 ---
 
@@ -16,14 +16,12 @@ if (!image.includes('.')) image = (await import(`../images/${image}.png`)).defau
   class="h-auto grid grid-rows-1 grid-cols-6 items-start rounded-lg xl:rounded-xl overflow-hidden bg-neutral-800"
 >
   <div class="h-full col-span-2 flex flex-col items-center justify-center bg-neutral-700 group">
-    <img src={image} alt="thumbnail" />
+    <img src={image} alt="thumbnail" class="group-hover:scale-105 transition-transform" />
   </div>
   <div class="h-full z-10 col-span-4 py-3 px-5">
     <h3 class="text-gray-400 font-normal text-base mb-0 mt-1">~/blog/{slug}:</h3>
     <a href=`/blog/${slug}` class="text-2xl text-gray-300 font-bold mt-5">{title}</a>
-    <div class="overflow-hidden max-h-[75px] text-base">
-      <Fragment set:html={html} />
-    </div>
+    <div class="overflow-hidden max-h-[75px] text-base"><Content /></div>
     <div class="text-right pr-4">
       <a href=`/blog/${slug}` class="text-gray-300 font-bold text-lg">Read more -></a>
     </div>

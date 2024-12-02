@@ -8,5 +8,3 @@ dist/
 src/manim/__pycache__/
 **/media/
 **/partial_movie_files/
-
-.env*
