@@ -3,25 +3,30 @@ import Layout from '@layouts/Layout.astro'
 import Latest from '@components/Latest.astro'
 import Recent from '@components/Recent.astro'
 import { getCollection } from 'astro:content'
+import { ghostClient } from '../lib/ghost'
+import type { PostsOrPages } from '@tryghost/content-api'
 
-const posts = await getCollection('blog')
-posts.sort((a, b) => (a.data.date > b.data.date ? -1 : 1))
-const rendered = (
-  await Promise.all(posts.map((post) => post.render().then((x) => x.Content)))
-).slice(1)
+const posts = (await ghostClient.posts
+  .browse({
+    limit: 'all'
+  })
+  .catch((err) => {
+    console.error(err)
+  })) as PostsOrPages
+// const posts = await getCollection('blog')
+// posts.sort((a, b) => (a.data.date > b.data.date ? -1 : 1))
+// const rendered = (
+//   await Promise.all(posts.map((post) => post.render().then((x) => x.Content)))
+// ).slice(1)
 ---
 
 <Layout title="~/blog">
   <div class="grid grid-cols-12 gap-3 xl:gap-5">
     <div class="col-span-6 xl:col-span-7">
-      <Latest slug={posts[0].slug} {...posts[0].data} />
+      <Latest {...posts[0]} />
     </div>
     <div class="col-span-6 xl:col-span-5 flex flex-col items-center gap-4 xl:gap-5">
-      {
-        posts
-          .slice(1)
-          .map((post, i) => <Recent slug={post.slug} Content={rendered[i]} {...post.data} />)
-      }
+      {posts.slice(1).map((post, i) => <Recent {...post} />)}
       <p>No older posts!</p>
     </div>
   </div>

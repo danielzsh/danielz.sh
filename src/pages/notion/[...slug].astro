@@ -1,12 +1,12 @@
 ---
 import { getCollection, render } from 'astro:content'
 import PostLayout from '@layouts/PostLayout.astro'
-import _ from 'lodash'
+import slugify from '@sindresorhus/slugify'
 
 export async function getStaticPaths() {
   const posts = await getCollection('notion')
   return posts.map((post) => ({
-    params: { slug: _.kebabCase(post.data.properties.Name) },
+    params: { slug: slugify(post.data.properties.Name) },
     props: { post }
   }))
 }

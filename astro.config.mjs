@@ -16,6 +16,9 @@ export default defineConfig({
   vite: {
     plugins: [Inspect()]
   },
+  image: {
+    remotePatterns: [{ protocol: 'https' }]
+  },
   experimental: {
     contentLayer: true
   }

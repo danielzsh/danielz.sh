@@ -19,8 +19,6 @@ const notion = defineCollection({
   schema: notionPageSchema({
     properties: z.object({
       Name: propertySchema.title.transform((prop) => prop.title[0].text.content),
-      // Converts to a primitive string
-      slug: propertySchema.rich_text.transform((prop) => prop.rich_text[0].plain_text),
       // Converts to a Notion API created_time object
       Date: propertySchema.date
     })

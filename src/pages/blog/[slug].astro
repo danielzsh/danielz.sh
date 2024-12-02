@@ -1,0 +1,37 @@
+---
+import { PostOrPage } from '@tryghost/content-api'
+import { ghostClient } from '../../lib/ghost'
+import PostLayout from '@layouts/PostLayout.astro'
+export async function getStaticPaths() {
+  const posts = await ghostClient.posts
+    .browse({
+      limit: 'all'
+    })
+    .catch((err) => {
+      console.error(err)
+    })
+  return posts.map((post) => {
+    return {
+      params: {
+        slug: post.slug
+      },
+      props: {
+        post: post
+      }
+    }
+  })
+}
+
+interface Props {
+  post: PostOrPage
+}
+const { post } = Astro.props
+---
+
+<PostLayout title={post.title}>
+  {new Date(post.created_at).toDateString().split(' ').slice(1).join(' ')} • {
+    Math.ceil(post.reading_time)
+  } min read
+  <h1>{post.title}</h1>
+  <Fragment set:html={post.html} />
+</PostLayout>
