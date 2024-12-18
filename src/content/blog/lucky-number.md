@@ -27,7 +27,6 @@ $$
 Which is just the span of $\langle 1, 1, 1\rangle$ and $\langle 0, 0, 1\rangle$. Therefore, we can "reduce" $\langle 2, 2, 3\rangle$ to $\langle 0, 0, 1\rangle$: **this**, not solving systems of equations, is the core idea of Gaussian elimination. Now, see if you can apply this method to reducing bit-vectors under XOR!
 
 ## Closing Thoughts
-
 The rest of the problem is pretty fun and simple, so I'll leave it to you as an exercise. This problem is the first time I've encountered the idea of XOR basis, so I thought it would be nice to write this little blog about it!
 
 That's it for this problem; As always, [here's my submission](https://loj.ac/s/2212034) in case you get stuck.

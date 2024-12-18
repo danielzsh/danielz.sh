@@ -3,17 +3,15 @@ date: 2024-08-30
 title: 'OI #1: Chorus'
 image: https://art.npanuhin.me/SVG/Codeforces/Codeforces.colored.svg
 ---
-
 Welcome to my first ever problem editorial! Here's a [link to the problem](https://loj.ac/p/3972) (the page links an English PDF as well).
 ## Observations
-
 First, it is worth noting that any valid arrangement must be an RBS, where A's are replaced with '(' and B's with ')' (convince yourself that this is true).
 
 Therefore, we consider visualizing our arrangement as a walk on a 2D plane, where A's are right steps and B's are up steps (note that if our arrangement is an RBS, this graph should never cross the line $y = x$). Here's the visualization for the arrangement "AABBABAABB":
 
 ![Visualizing the arrangement as a walk](@images/chorus/walk1.png)
 
-The maximum number of groups in this case is actually very obvious, since they are all contiguous&mdash;(AABB)(AB)(AABB). This can be seen visually as the number of times the walk touches the line $y = x$.
+The maximum number of groups in this case is actually very obvious, since they are all contiguous—(AABB)(AB)(AABB). This can be seen visually as the number of times the walk touches the line $y = x$.
 
 However, consider this case (which is one of the sample cases), "AABABABBAB":
 
@@ -29,8 +27,7 @@ Here's the same image, but with the groups colored this time:
 Notice how they are interleaved with each other; we would instead like every group to be disjoint.
 So, how can we achieve this?
 
-Intuitively, we can "pull" the last blue segment forward and "push" the first purple segment up,
-which will give us this:
+Intuitively, we can "pull" the last blue segment forward and "push" the first purple segment up, which will give us this:
 ![](@images/chorus/walk3.png)
 
 This can be seen even more intuitively as **raising the height** of a segment (in this case, the segment on $x = [2, 3)$).
@@ -64,9 +61,7 @@ $\{[0, 2), [2, 3), [3, 4), [4, 5)\}$.
 
 Let's define $w(l, r)$ as the cost to form the partition $[l, r)$.
 
-In the case above, $w(0, 2)$ would be 1, since one **decrease height** operation with $h = 1$ is required
-to form the desired right-triangle shape on that interval. $w(0, 5)$ would be 10,
-since we must decrease the height of all segments on $[1, 5)$, which have a total height of 10.
+In the case above, $w(0, 2)$ would be 1, since one **decrease height** operation with $h = 1$ is required to form the desired right-triangle shape on that interval. $w(0, 5)$ would be 10, since we must decrease the height of all segments on $[1, 5)$, which have a total height of 10.
 
 Thus, we can let $g(r, k)$ be the minimum cost to partition $[0, r)$ into $k$ segments, and write the following DP:
 
@@ -84,8 +79,7 @@ Most of the optimization lies within the computation of $w(l, r)$, and finding a
 
 If you're curious like I was about how to rigorously prove the convexity, it actually follows directly from the quadrangle inequality, which states that, for any such array partition problem, if the cost function $C(l, r)$ satisfies $C(a, c) + C(b, d) \leq C(a, d) + C(b, c)$ for all $a \leq b \leq c \leq d$, the cost of partitioning any interval $[l, r]$ is convex in the number of partitions.
 
-A proof of this property is available [here](https://oi-wiki.org/dp/opt/quadrangle/); you can find the proof by expanding the _'定理3'_ section and the one right below
-it.
+A proof of this property is available [here](https://oi-wiki.org/dp/opt/quadrangle/); you can find the proof by expanding the _'定理3'_ section and the one right below it.
 ![](@images/chorus/quadrangle.png)
 _It's written in Chinese, but you can probably ChatGPT the translation._
 

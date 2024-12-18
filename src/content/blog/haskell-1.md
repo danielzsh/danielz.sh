@@ -3,7 +3,6 @@ date: 2024-08-30
 title: 'Haskell: #1'
 image: https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Haskell-Logo.svg/1024px-Haskell-Logo.svg.png
 ---
-
 Recently, I stumbled across the idea of functional programming (FP) and its flagship language, [Haskell](https://www.haskell.org/).
 I was instantly intrigued by the language's unique syntax and simplicity.
 For instance, below are two implementations of a [leftist heap](https://en.wikipedia.org/wiki/Leftist_tree) in Java and Haskell, respectively:
@@ -71,9 +70,7 @@ _Clean, concise, and elegant._
 With that said, here's what I've learned so far about Haskell and functional programming!
 
 ## What is Functional Programming?
-
-Obviously, FP revolves around **functions**. An important property of functions in FP is that they are _first-class citizens_. This means that functions can be passed as arguments to other functions, returned as values from other functions, and assigned to variables.
-Functions also satisfy the _referential transparency_ property, which means that a function always returns the same output for the same input.
+Obviously, FP revolves around **functions**. An important property of functions in FP is that they are _first-class citizens_. This means that functions can be passed as arguments to other functions, returned as values from other functions, and assigned to variables. Functions also satisfy the _referential transparency_ property, which means that a function always returns the same output for the same input.
 
 Here's a concrete example: imagine a `Counter` class in a standard OOP language with a method `increment()` that increments a counter by 1 and returns the new value. If you call `increment()` twice, the first call will return 1, while the second will return 2. However, in FP, you would define a function `increment` that takes a counter as an argument and returns a new counter with the value incremented by 1. Therefore, `increment counter` will always return the same value, regardless of how many times you call it.
 
