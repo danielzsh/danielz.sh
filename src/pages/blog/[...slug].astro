@@ -1,16 +1,17 @@
 ---
 import { getCollection, getEntry } from 'astro:content'
 import PostLayout from '@layouts/PostLayout.astro'
+import { render } from 'astro:content'
 export async function getStaticPaths() {
   const posts = await getCollection('blog')
-  return posts.map((post) => ({ params: { slug: post.slug } }))
+  return posts.map((post) => ({ params: { slug: post.id } }))
 }
 const { slug } = Astro.params
 const Post = slug && (await getEntry('blog', slug))
 if (!Post) return Astro.redirect('/404')
 const frontmatter = Post.data
 const readTime = Post.body.split(' ').length / 200
-const { Content } = await Post.render()
+const { Content } = await render(Post)
 ---
 
 <PostLayout title={frontmatter.title}>

@@ -7,6 +7,8 @@ export async function getStaticPaths() {
   const pages = await getCollection('notion')
 
   return pages.map((page) => {
+    console.log(page.data.properties)
+    console.log(slugify(page.data.properties.Name))
     return {
       params: {
         slug: slugify(page.data.properties.Name)
@@ -24,19 +26,6 @@ const { page } = Astro.props
 const { Content, headings } = await render(page)
 ---
 
-<PostLayout
-  title={page.data.properties.Name}
-  <!--
-  content={{
-    title: page.data.properties.Name,
-    cover: fileToUrl(page.data.cover),
-    pubDate: page.data.properties.Created,
-    updatedDate: page.data['Last visited'],
-    notionLink: page.data.public_url ?? page.data.url
-  }}
-  --
->
-  <!-- headings={headings} -->
-  >
+<PostLayout title={page.data.properties.Name}>
   <Content />
 </PostLayout>
