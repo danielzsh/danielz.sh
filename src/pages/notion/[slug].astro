@@ -1,0 +1,42 @@
+---
+import { getCollection, render } from 'astro:content'
+import PostLayout from '@layouts/PostLayout.astro'
+import slugify from '@sindresorhus/slugify'
+
+export async function getStaticPaths() {
+  const pages = await getCollection('notion')
+
+  return pages.map((page) => {
+    return {
+      params: {
+        slug: slugify(page.data.properties.Name)
+      },
+      props: {
+        page
+      }
+    }
+  })
+}
+
+export type Props = Awaited<ReturnType<typeof getStaticPaths>>[number]['props']
+const { page } = Astro.props
+
+const { Content, headings } = await render(page)
+---
+
+<PostLayout
+  title={page.data.properties.Name}
+  <!--
+  content={{
+    title: page.data.properties.Name,
+    cover: fileToUrl(page.data.cover),
+    pubDate: page.data.properties.Created,
+    updatedDate: page.data['Last visited'],
+    notionLink: page.data.public_url ?? page.data.url
+  }}
+  --
+>
+  <!-- headings={headings} -->
+  >
+  <Content />
+</PostLayout>

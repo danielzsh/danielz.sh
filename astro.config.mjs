@@ -15,5 +15,13 @@ export default defineConfig({
   },
   vite: {
     plugins: [Inspect()]
+  },
+  image: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.amazonaws.com'
+      }
+    ]
   }
 })
